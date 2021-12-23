@@ -1,0 +1,92 @@
+version: "3.7"
+  
+services:
+  db:
+    container_name: mysql_container
+    image: mysql
+    build:
+      dockerfile: volume/db.Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: "mysql"
+    ports:
+      - "3306:3306"
+    volumes:
+      - /Users/home/Desktop/demo/volume:/var/lib/mysql
+
+  # reverse-proxy:
+  #   image: nginx:1.17.10
+  #   container_name: reverse_proxy
+    # depends_on:
+    #   - allget
+    #   - oneget
+    #   - onepost
+    #   - oneput
+    #   - onedel
+  #   volumes:
+  #     - ./reverse_proxy/nginx.conf:
+
+# sth from stackoverflow
+  nginx:
+    build:
+      context: .
+      dockerfile: reverse_proxy/Dockerfile.nginx
+    ports:
+      - 3000:80
+    depends_on:
+      - allget
+      - oneget
+      - onepost
+      - oneput
+      - onedel
+
+  allget:
+      container_name: "getAll_container"
+      build:
+        context: .
+        dockerfile: allApi/getAllApi/getAll.Dockerfile
+      environment:
+        MYSQL_ROOT_PASSWORD: mysql
+      depends_on:
+        - db
+
+  oneget:
+    container_name: "getOne_container"
+    build:
+      context: .
+      dockerfile: allApi/getOneApi/getOne.Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    depends_on:
+      - db
+
+  onepost:
+    container_name: "postOne_container"
+    build:
+      context: .
+      dockerfile: allApi/postApi/postOne.Dockerfile
+    depends_on:
+      - db
+
+  oneput:
+    container_name: "putOne_container"
+    build:
+      dockerfile: allApi/putApi/putOne.Dockerfile
+    depends_on:
+      - db
+
+  onedel:
+    container_name: "delOne_container"
+    build:
+      dockerfile: allApi/delApi/delOne.Dockerfile
+    depends_on:
+      - db
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "phpmyadmin_container"
+    ports:
+      - "82:80"
+    depends_on:
+      - db
+
+

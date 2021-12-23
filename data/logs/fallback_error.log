@@ -1,0 +1,26 @@
+2021/12/23 03:26:29 [error] 286#286: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "localhost:81", referrer: "http://localhost:81/"
+2021/12/23 03:32:43 [error] 280#280: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "localhost:81", referrer: "http://localhost:81/"
+2021/12/23 03:32:50 [error] 280#280: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: nginxproxymanager, request: "POST /api/tokens HTTP/1.1", upstream: "http://127.0.0.1:3000/tokens", host: "localhost:81", referrer: "http://localhost:81/login"
+2021/12/23 03:32:53 [error] 280#280: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: nginxproxymanager, request: "POST /api/tokens HTTP/1.1", upstream: "http://127.0.0.1:3000/tokens", host: "localhost:81", referrer: "http://localhost:81/login"
+2021/12/23 03:50:48 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:50:48 [emerg] 227#227: still could not bind()
+2021/12/23 03:51:31 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to 0.0.0.0:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: bind() to [::]:3000 failed (98: Address already in use)
+2021/12/23 03:51:31 [emerg] 227#227: still could not bind()

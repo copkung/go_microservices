@@ -1,0 +1,4 @@
+FROM nginx
+WORKDIR /demo
+
+COPY /reverse_proxy/nginx.conf /etc/nginx/nginx.conf
