@@ -18,6 +18,9 @@ func main() {
 func postData(c *gin.Context) {
 	var input User.User
 	c.ShouldBindJSON(&input)
+	if input.ID == 0 || input.Name == "" || input.Message == "" {
+		c.String(http.StatusBadRequest, "Input incomplete! Please check before posting again.")
+	}
 	db := dbConnect.ConnectDB()
 	if err := db.Table("User").Select("ID", "Name", "Message").Create(&input).Error; err != nil {
 		c.String(http.StatusBadRequest, "%v \n", err)

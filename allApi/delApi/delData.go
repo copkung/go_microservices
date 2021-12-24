@@ -18,13 +18,10 @@ func delData(c *gin.Context) {
 	var input User.User
 	var user User.User
 	c.ShouldBindJSON(&input)
-	// getOneApi.GetOne(c, input)
-	// replace with available func. later
-
 	db := dbConnect.ConnectDB()
 	db.Table("User").Where("name = ? OR id = ?", input.Name, input.ID).Find(&user)
-	if user.Name != "" && user.ID == 0 {
-		if err := db.Table("User").Select("ID", "Name", "Message").Delete(user).Error; err != nil {
+	if user.Name != "" && user.ID != 0 {
+		if err := db.Table("User").Select("ID", "Name", "Message").Delete(&user).Error; err != nil {
 			c.String(http.StatusBadRequest, "%v \n", err)
 		} else {
 			c.JSON(http.StatusOK, user)

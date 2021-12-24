@@ -12,20 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - /Users/home/Desktop/demo/volume:/var/lib/mysql
-
-  # reverse-proxy:
-  #   image: nginx:1.17.10
-  #   container_name: reverse_proxy
-    # depends_on:
-    #   - allget
-    #   - oneget
-    #   - onepost
-    #   - oneput
-    #   - onedel
-  #   volumes:
-  #     - ./reverse_proxy/nginx.conf:
-
-# sth from stackoverflow
+      
   nginx:
     build:
       context: .

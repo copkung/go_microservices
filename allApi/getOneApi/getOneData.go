@@ -19,7 +19,7 @@ func getOne(c *gin.Context) {
 	c.ShouldBindJSON(&input)
 	db := dbConnect.ConnectDB()
 	db.Table("User").Where("name = ? OR id = ?", input.Name, input.ID).Find(&input)
-	if input.Name != "" {
+	if input.Name != "" || input.ID != 0 || input.Message != "" {
 		c.String(http.StatusOK, "Your target data : %v \n", input)
 	} else {
 		c.String(http.StatusBadRequest, "Data not found.\n")
